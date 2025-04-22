@@ -1,4 +1,4 @@
-CONSIDERACIONES PREVIAS
+# CONSIDERACIONES PREVIAS
 Necesario tener instalado Snort o Suricata, ambos son validos yo lo hago con Snort.
 También es necesario crear un Bot en nuestro Telegram que será el encargado de transmitirnos las alertas
 Yo lo cree usando BotFather con /newbot, es fácil solo seguir los pasos, después hay que añadir los comandos
@@ -41,12 +41,12 @@ WantedBy=multi-user.target
 - sudo systemctl enable miscript.service
 )]
 
-USO DEL SCRIPT
+# USO DEL SCRIPT
 
-Una vez tengamos todo localizado, iniciamos el script ./script.py con sudo 
+Una vez tengamos todo listo, iniciamos el script ./script.py con sudo 
 para que al bloquear una ip con IPtables no tengamos problemas ya que este usa permisos de root.
 
-PRUEBA DE FUNCIONAMIENTO
+# PRUEBA DE FUNCIONAMIENTO
 
 Si está todo bien configurado y el script se inicia correctamente, podemos probar desde otra ip externa al propio sistema mandando un ping
 y debería llegar una alerta tanto a telegram como en la terminal que estemos ejecutando el script.
