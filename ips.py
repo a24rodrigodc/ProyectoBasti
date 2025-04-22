@@ -12,9 +12,9 @@ from telegram.ext import (
 )
 from telegram.error import TelegramError
 
-TOKEN = "8055320051:AAE8nJ8rkgqXfFl0qfD_qwTf6iwmVAPZ15E"
-CHAT_ID = "2051675396"
-LOG_FILE = "/var/log/snort/snort.alert.fast"
+TOKEN = "" # Ejemplo: 9832707173:AAE7nJ3rkgqFfFl0qfD_qwTf6iwmJEPZ15E
+CHAT_ID = "" # Ejemplo: 2051671994
+LOG_FILE = "" # Ejemplo: /var/log/snort/snort.alert.fast
 
 class IPSMonitor:
     def __init__(self):
@@ -87,7 +87,7 @@ class IPSMonitor:
             return f"❌ Error bloqueando IP: {str(e)}"
 
     async def send_alert(self, ip, attack_type):
-        """Envía alerta personalizada"""
+        """Envía alerta"""
         try:
             message = (
                 f"🚨 **Alerta Snort**\n"
@@ -147,10 +147,8 @@ class IPSMonitor:
 
             await update.message.reply_text(f"🔍 Buscando WHOIS para {ip}...")
         
-            # Llamar a la función get_whois
             whois_info = await self.get_whois(ip)
 
-            # Mostrar la salida directamente
             await update.message.reply_text(
                 f"🌍 IP: {ip}\n\n🔍 WHOIS:\n{whois_info}",
                 parse_mode="Markdown"
@@ -170,7 +168,7 @@ class IPSMonitor:
         message = "📝 IPs alertadas recientemente:\n\n"
         for ip, timestamp in sorted(self.alerted_ips.items(), 
                                   key=lambda x: x[1], 
-                                  reverse=True)[:10]:  # Mostrar solo las 10 más recientes
+                                  reverse=True)[:10]:  
             message += f"• `{ip}` - {time.ctime(timestamp)}\n"
 
         message += "\nPara bloquear: /bloquear <IP>"
