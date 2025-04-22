@@ -30,7 +30,7 @@ WorkingDirectory=/ruta/completa/al/
 StandardOutput=journal
 StandardError=journal
 
-# Al no especificar User=, se ejecuta como root
+#Al no especificar User=, se ejecuta como root
 
 [Install]
 WantedBy=multi-user.target
