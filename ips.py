@@ -12,9 +12,10 @@ from telegram.ext import (
 )
 from telegram.error import TelegramError
 
-TOKEN = "" # Ejemplo: 9832707173:AAE7nJ3rkgqFfFl0qfD_qwTf6iwmJEPZ15E
-CHAT_ID = "" # Ejemplo: 2051671994
+TOKEN = "" # Ejemplo: ##########:AAE7nJ3rkgqFfFl0qfD_qwTf6iwmJEPZ15E
+CHAT_ID = "" # Ejemplo: ##########
 LOG_FILE = "" # Ejemplo: /var/log/snort/snort.alert.fast
+# son numeros
 
 class IPSMonitor:
     def __init__(self):
